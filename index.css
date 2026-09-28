@@ -1,0 +1,144 @@
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(188, 19, 254, 0.3);
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(188, 19, 254, 0.5);
+}
+
+/* Markdown Styles for Chatbot */
+.markdown-body p {
+  margin-bottom: 0.5rem;
+}
+.markdown-body p:last-child {
+  margin-bottom: 0;
+}
+.markdown-body ul, .markdown-body ol {
+  margin-bottom: 0.5rem;
+  padding-left: 1.25rem;
+}
+.markdown-body li {
+  margin-bottom: 0.25rem;
+}
+.markdown-body strong {
+  color: #00f3ff;
+  font-weight: 600;
+}
+.markdown-body code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+/* GPU Hardware-Accelerated Animations for ultra smoothness */
+@keyframes spin-cw {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes spin-ccw {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+@keyframes cube-idle-spin {
+  0% {
+    transform: translateY(-12px) rotateX(18deg) rotateY(-32deg);
+  }
+  50% {
+    transform: translateY(6px) rotateX(28deg) rotateY(148deg);
+  }
+  100% {
+    transform: translateY(-12px) rotateX(18deg) rotateY(328deg);
+  }
+}
+@keyframes glow-pulse {
+  0% {
+    box-shadow: 0 0 20px rgba(188,19,254,0.3);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(188,19,254,0.6);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(188,19,254,0.3);
+  }
+}
+@keyframes whatsapp-halo {
+  0% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.35); opacity: 0; }
+  100% { transform: scale(1); opacity: 0.5; }
+}
+
+.animate-spin-cw-slow {
+  animation: spin-cw 25s linear infinite;
+  will-change: transform;
+}
+.animate-spin-ccw-slow {
+  animation: spin-ccw 14s linear infinite;
+  will-change: transform;
+}
+.animate-orbit-1 {
+  animation: spin-cw 20s linear infinite;
+  will-change: transform;
+}
+.animate-orbit-2 {
+  animation: spin-ccw 30s linear infinite;
+  will-change: transform;
+}
+.animate-orbit-3 {
+  animation: spin-cw 45s linear infinite;
+  will-change: transform;
+}
+.animate-cube-idle {
+  animation: cube-idle-spin 16s infinite ease-in-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.animate-glow-pulse {
+  animation: glow-pulse 4s infinite ease-in-out;
+  will-change: box-shadow;
+}
+.animate-whatsapp-breath {
+  animation: whatsapp-halo 2.2s infinite ease-in-out;
+  will-change: transform, opacity;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+/* Print optimizations for CV modal */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-page, .print-page * {
+    visibility: visible;
+  }
+  .print-page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    transform: none !important;
+  }
+}
+
+
